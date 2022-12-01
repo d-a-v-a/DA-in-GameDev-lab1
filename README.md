@@ -55,14 +55,14 @@
 
 ![and1](https://user-images.githubusercontent.com/92369801/205014861-b371f19a-4692-4055-be68-5ef32762eac3.jpg)
 
-Примерное количество эпох для обичения 8
+Примерное количество эпох для обучения 8
 ![and2](https://user-images.githubusercontent.com/92369801/205015083-16b4753f-836b-4c82-aa4a-f27bc94eb9d7.jpg)
 
 4) Внес в пустой GameObject код прецептрона и указал нужные значения для вычисления NAND
 
 ![nand1](https://user-images.githubusercontent.com/92369801/205017083-45140c7f-4548-43be-bebb-7e9761766f27.jpg)
 
-Примерное количество эпох для обичения 8
+Примерное количество эпох для обучения 8
 
 ![nand2](https://user-images.githubusercontent.com/92369801/205017350-2115e667-adf9-4041-afbf-1f8c653134e4.jpg)
 
