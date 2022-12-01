@@ -35,87 +35,82 @@
 - ✨Magic ✨
 
 ## Цель работы
-Ознакомиться с основными операторами зыка Python на примере реализации линейной регрессии.
-
+Узнать что такое перцептрон и понять принципы его работы
 ## Задание 1 
-Написать программу Hello World на Python и на Unity
+В программе Unity реализовать перцептрон, который умеет проводить вычисления OR, AND, NAND, XOR
 
-![Screenshot_1](https://user-images.githubusercontent.com/92369801/192562632-87982fdd-d9c8-4d8d-92e7-afcc0f303642.jpg)
+1) Внес в пустой GameObject код прецептрона и указал нужные значения для вычисления OR
 
-![Screenshot_4](https://user-images.githubusercontent.com/92369801/192562734-c4012083-3f6b-4919-84a8-2ebdb755ad48.jpg)
+![1](https://user-images.githubusercontent.com/92369801/205012686-488d04de-2534-42b8-a052-482bb0f00066.jpg)
 
+2) Подобрал значение массива ts, с помощью метода Train, чтобы гарантированно научить прецептрон вычислять OR
+
+![3](https://user-images.githubusercontent.com/92369801/205013428-1a3ea0e5-b7d6-4651-9e07-202ed91dc035.jpg)
+
+![2](https://user-images.githubusercontent.com/92369801/205013453-cb759104-5bca-4233-b024-19398d055922.jpg)
+
+Прецептрон может работать с вычислением OR, примерно 5 эпох ему достаточно
+
+3) Внес в пустой GameObject код прецептрона и указал нужные значения для вычисления AND
+
+![and1](https://user-images.githubusercontent.com/92369801/205014861-b371f19a-4692-4055-be68-5ef32762eac3.jpg)
+
+Примерное количество эпох для обичения 8
+![and2](https://user-images.githubusercontent.com/92369801/205015083-16b4753f-836b-4c82-aa4a-f27bc94eb9d7.jpg)
+
+4) Внес в пустой GameObject код прецептрона и указал нужные значения для вычисления NAND
+
+![nand1](https://user-images.githubusercontent.com/92369801/205017083-45140c7f-4548-43be-bebb-7e9761766f27.jpg)
+
+Примерное количество эпох для обичения 8
+
+![nand2](https://user-images.githubusercontent.com/92369801/205017350-2115e667-adf9-4041-afbf-1f8c653134e4.jpg)
+
+5)  Внес в пустой GameObject код прецептрона и указал нужные значения для вычисления XOR
+
+![xor1](https://user-images.githubusercontent.com/92369801/205018918-dcb437f4-5b71-4e3e-ab14-f566b8e63b7b.jpg)
+
+Прецептрон не может считать значение XOR, поскольку линейный классификатор может делить плоскость только прямыми линиями, а при вычислении XOR два сигнала на входе имеют разные значения
+
+![xor2](https://user-images.githubusercontent.com/92369801/205020162-aaa2efbc-b780-4364-866a-d4e636d25dc0.jpg)
 
 ## Задание 2
-### Пошагово выполнить каждый пункт раздела "ход работы" с описанием и примерами реализации задач
-- Произвести подготовку данных для работы с алгоритмом линейной регрессии. 10 видов данных были установлены случайным образом, и данные находились в линейной зависимости. Данные преобразуются в формат массива, чтобы их можно было вычислить напрямую при использовании умножения и сложения.
+### Построить графики зависимости количество эпох от ошибки обучения. Указать от чего зависит необходимое количество эпох обучения
 
-![Screenshot_2](https://user-images.githubusercontent.com/92369801/192563741-9209cda9-6700-4260-9f0c-1725691b481a.jpg)
+![graf](https://user-images.githubusercontent.com/92369801/205034815-d9cbeeb7-5b57-491e-925b-93cd57a265e8.jpg)
 
-- Определите связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
-
-![Screenshot_3](https://user-images.githubusercontent.com/92369801/192567212-b133ca07-1f9d-446a-86f8-4306ccc65f56.jpg)
-
-Инициализируем и итерируем
-
-1 по 5 итерация
-
-![1](https://user-images.githubusercontent.com/92369801/192572165-ceb84ed3-1fad-4ebb-92fd-c53114b7173b.jpg)
-
-![2](https://user-images.githubusercontent.com/92369801/192572174-163b2579-0ce9-48c0-b8fc-261678f4d1b2.jpg)
-
-![3](https://user-images.githubusercontent.com/92369801/192572183-1a67ed41-4ce7-4c85-bd02-73bca6aa7640.jpg)
-
-![4](https://user-images.githubusercontent.com/92369801/192572191-dfc22e36-7028-4b3b-a170-c2433a1750e5.jpg)
-
-![5](https://user-images.githubusercontent.com/92369801/192572197-cfe928fd-5172-4741-8c6d-a8bb7129be75.jpg)
-
-
-1000-я итерация
-
-![10000](https://user-images.githubusercontent.com/92369801/192572204-b6b5e267-ad7f-44e3-9b3e-2a6f976d9b0e.jpg)
+Необходимое количество эпох зависит от сложглсти выбранного вычисления и рандома
 
 
 ## Задание 3
-### Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
+### Построить визуальную модель прецептрона на сцене Unity
+в следующем примере я использую два куба с изменением цвета чтобы показать как прецептрон работает с операцией AND
+Красный цвет куб - 0
+Синий цвет - 1
+Красный цвет итоговый кубов - 0
+Желтый цвет - 1
 
-Величина loss стремится к нулю при множественных итерациях.
+![cube 1 1](https://user-images.githubusercontent.com/92369801/205049468-88a2afe7-7410-4e47-9950-6581dc8b3378.jpg)
 
-Для примера проведем те же самые действия с другими данными
-
-![1](https://user-images.githubusercontent.com/92369801/192574589-7092d8a1-4ab9-4460-85ae-755a393dde07.jpg)
-
-![2](https://user-images.githubusercontent.com/92369801/192574647-3c2c61ad-5ecc-41cc-80f1-636f6a007a86.jpg)
-
-на 10000 итерации loss совсем мал
-
-![3](https://user-images.githubusercontent.com/92369801/192574694-bfb53075-12e1-4955-936e-c9d9fcce8150.jpg)
+![cube 1 2](https://user-images.githubusercontent.com/92369801/205049493-84ddd30b-3016-4942-8130-ba8b058d304d.jpg)
 
 
-### Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
+![cube 2 1](https://user-images.githubusercontent.com/92369801/205049595-255070e5-941b-4f8e-af6d-5b1f9278d2f4.jpg)
 
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+![cube 2 2](https://user-images.githubusercontent.com/92369801/205049604-c953c02b-b82f-4aff-abf3-9d29d37718ee.jpg)
 
-Lr - коэффициент, который влияет на шаг при итерации.
+![cube 3 1](https://user-images.githubusercontent.com/92369801/205049606-c437e02e-15b9-4c19-8cfc-adefceb6e159.jpg)
 
-При слишком большом Lr модель станет некорректной
+![cube 3 2](https://user-images.githubusercontent.com/92369801/205049609-7d784028-afec-4817-a96c-2bf81a5551c1.jpg)
 
-![1](https://user-images.githubusercontent.com/92369801/192575820-33e522bb-a134-45f6-83d0-d7a0651d1d01.jpg)
+![cube 4 1](https://user-images.githubusercontent.com/92369801/205049611-216c524c-92f6-45ea-a36a-a7fc59a8e6e5.jpg)
 
-![2](https://user-images.githubusercontent.com/92369801/192575828-c50db45e-e4b0-4812-a496-d19c7f5ebbf1.jpg)
-
-А при слишком маленьком понадобиться большое количество итераций
-
-![3](https://user-images.githubusercontent.com/92369801/192575972-5043c7a6-0666-4bcf-a645-3c5c7f6ce797.jpg)
-
-![4](https://user-images.githubusercontent.com/92369801/192575983-b3116dd1-a5e0-4598-be64-b7c382a36a1b.jpg)
-
-![5](https://user-images.githubusercontent.com/92369801/192575992-292b21ea-591c-4e39-a520-4d79bc3c50c9.jpg)
+![cube 4 2](https://user-images.githubusercontent.com/92369801/205049614-451f4107-7ebb-49d9-aa45-a1de5b689edb.jpg)
 
 
 ## Выводы
+Я узнал что такое прецептрон и опробовал принципы его работы на практике
 
-В ходе лабораторной работы вспомнил Google Colab и познакомился Unity. Опробовал библиотеки NumPy и Matplotlib, построил первую модель и узнал как она работает.
 
 | Plugin | README |
 | ------ | ------ |
